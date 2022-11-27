@@ -1,0 +1,2 @@
+class AotApiException(Exception):
+    pass
