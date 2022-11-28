@@ -7,7 +7,8 @@ from aotapi.models import Result
 import logging
 
 class RestAdapter:
-    def __init__(self, hostname: 'api-attack-on-titan.herokuapp.com', ver: str = 'v1', ssl_verify: bool = True, logger: logging.Logger = None):
+    def __init__(self, hostname: str = 'api-attack-on-titan.herokuapp.com', ver: str = 'v1', ssl_verify: bool = True,
+                 logger: logging.Logger = None):
         """
         Constructor for RestAdapter
         :param hostname: Normally, https://api-attack-on-titan.herokuapp.com/
@@ -15,6 +16,7 @@ class RestAdapter:
         :param ssl_verify: Normally set to True, but if having SSL/TLS cert validation issues, can turn off with False
         :param logger: Normally set to True, but if having SSL/TLS cert validation issues, can turn off with False
         """
+        self.hostname = hostname
         self._logger = logger or logging.getLogger(__name__)
         self.url = "https://{}/api/{}/".format(hostname, ver)
         self._ssl_verify = ssl_verify
