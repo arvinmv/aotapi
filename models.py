@@ -1,5 +1,6 @@
 from typing import List, Dict
 
+
 class Result:
     def __init__(self, status_code: int, message: str = '', data: List[Dict] = None):
         """
@@ -11,6 +12,7 @@ class Result:
         self.status_code = int(status_code)
         self.message = str(message)
         self.data = data if data else []
+
 
 class Characters:
     def __init__(self, id: int, first_name: str, last_name: str, species: str, age: int, height,
@@ -24,6 +26,7 @@ class Characters:
         self.residence = str(residence)
         self.status = str(status)
         self.alias = str(alias)
+
 
 class Titans:
     def __init__(self, id: int, name: str, other_names: str, abilities: str, current_inheritor: str,
